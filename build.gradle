@@ -36,7 +36,7 @@ dependencies {
     testCompile 'org.testng:testng:6.9.9'
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'net.masterthought:cucumber-reporting:3.7.0'
-    testCompile 'org.hamcrest:hamcrest-core:1.3'
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
 }
 
 task runTests() {
@@ -46,7 +46,21 @@ task runTests() {
             main = "cucumber.api.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = ['--plugin', 'pretty',
-                    '--glue', 'src/test/java/stepDefinitions', 'src/test/resources']
+                    '--glue', 'stepDefinitions', 'src/test/resources',
+                    '--tags', '~@regression']
+        }
+    }
+}
+
+task runRegressionTests() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty',
+                    '--glue', 'stepDefinitions', 'src/test/resources',
+                    '--tags', '@regression']
         }
     }
 }

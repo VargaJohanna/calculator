@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import sharedMethods.DriverMethods;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,7 +8,7 @@ import java.util.Map;
 
 public class Buttons {
     public static final By outputField = By.id("edt1");
-    public static  final Map<String, By> buttonSelectors = Collections.unmodifiableMap(
+    public static final Map<String, By> buttonSelectors = Collections.unmodifiableMap(
             new HashMap<String, By>() {{
                 put("1", By.id("button1"));
                 put("2", By.id("button2"));
@@ -24,6 +23,7 @@ public class Buttons {
                 put("=", By.id("buttoneql"));
                 put(".", By.id("button10"));
                 put("C", By.id("buttonC"));
+                put("c", By.id("buttonC"));
                 put("+", By.id("buttonadd"));
                 put("-", By.id("buttonsub"));
                 put("*", By.id("buttonmul"));

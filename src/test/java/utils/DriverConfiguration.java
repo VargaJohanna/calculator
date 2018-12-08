@@ -34,7 +34,7 @@ public class DriverConfiguration {
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersion);
         capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
-//        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, automationName);
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, automationName);
         this.desiredCapabilities = capabilities;
     }
 }

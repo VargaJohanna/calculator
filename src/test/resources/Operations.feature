@@ -1,18 +1,11 @@
 Feature: Execute basic operations
 
-  Scenario: Sum two integer numbers
-    Given I enter number "20"
+  Scenario: Sum two numbers
+    Given I enter number "20.56"
     And I press button "+"
     And I enter number "3"
     When I press button "="
-    Then the output is "23.0"
-
-  Scenario: Sum two decimal numbers
-    Given I enter number "20.56"
-    And I press button "+"
-    And I enter number "3.98"
-    When I press button "="
-    Then the output is "24.539999"
+    Then the output is "23.56"
 
   Scenario: Subtract numbers where the result is positive
     Given I enter number "564"
@@ -40,7 +33,7 @@ Feature: Execute basic operations
     And I press button "*"
     And I enter number "9"
     When I press button "="
-    Then the output is "27"
+    Then the output is "27.0"
 
   Scenario: Dividing by null should not be allowed
     Given I enter number "1"
@@ -49,7 +42,16 @@ Feature: Execute basic operations
     When I press button "="
     Then the output is "Infinity"
 
-  Scenario: Entering strings should not be allowed
-    Given I enter "string"
+  Scenario: Entering letters should not be allowed
+    Given I enter alphabetic characters
     Then the field should be empty
 
+  Scenario: Clear button should clear the input field
+    Given I enter number "101010"
+    And I press button "C"
+    Then the field should be empty
+
+  @regression
+  Scenario: App should not crash when operation buttons are used on empty field
+    Given I press button "="
+    Then the field should be empty

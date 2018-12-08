@@ -5,6 +5,7 @@ import cucumber.api.java.Before;
 import sharedMethods.DriverMethods;
 import utils.AndroidDriverFactory;
 import utils.DriverConfiguration;
+import utils.DriverFactory;
 
 import java.io.File;
 
@@ -17,7 +18,7 @@ public class BeforeAfterScenario {
 
     @Before
     public void setupDriver() {
-        AndroidDriverFactory driverFactory = new AndroidDriverFactory();
+        DriverFactory driverFactory = new AndroidDriverFactory();
         DriverConfiguration configuration = new DriverConfiguration();
         File apk = new File("src/test/java/apk/assignment1.apk");
         configuration.setDesiredCapabilities(
@@ -27,7 +28,7 @@ public class BeforeAfterScenario {
                 "8",
                 "UiAutomator2");
         configuration.setAppiumAddress("http://127.0.0.1:4723/wd/hub");
-        driverMethods.setDriver(driverFactory.createAndroidDriver(configuration));
+        driverMethods.setDriver(driverFactory.createDriver(configuration));
     }
 
     @After

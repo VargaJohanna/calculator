@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java8.En;
 import pageObjects.Buttons;
 import sharedMethods.DriverMethods;
@@ -13,7 +14,6 @@ public class OperationsSteps implements En {
     public OperationsSteps (DriverMethods driverMethods) {
         Given("^I press button \"([^\"]*)\"$", (String input) -> {
             driverMethods.enterNumber(input);
-            String output = driverMethods.getDriver().findElement(Buttons.outputField).getText();
         });
 
         Given("^I (?:enter number|enter) \"([^\"]*)\"$", (String input) -> {
@@ -32,8 +32,10 @@ public class OperationsSteps implements En {
             assertThat(StringUtils.isEmpty(output), is(true));
         });
 
-        Given("^I enter alphabetic characters$", () -> {
-            driverMethods.getDriver().findElement(Buttons.outputField).sendKeys("string");
+        Given("^I enter input \"([^\"]*)\"$", (String input) -> {
+            driverMethods.getDriver().findElement(Buttons.outputField).sendKeys(input);
+            String output = driverMethods.getDriver().findElement(Buttons.outputField).getText();
+            assertThat(output, equalTo(input));
         });
     }
 }

@@ -42,6 +42,14 @@ Feature: Execute basic operations
     When I press button "="
     Then the output is "27"
 
-  Scenario: Divide by null should not be allowed
-  Scenario: Tapping the input field should not open the device keyboard
+  Scenario: Dividing by null should not be allowed
+    Given I enter number "1"
+    And I press button "/"
+    And I enter number "0"
+    When I press button "="
+    Then the output is "Infinity"
+
+  Scenario: Entering strings should not be allowed
+    Given I enter "string"
+    Then the field should be empty
 

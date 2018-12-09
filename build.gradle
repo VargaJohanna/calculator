@@ -13,8 +13,11 @@ configurations {
 }
 
 dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.testng:testng:6.9.9'
+
     // Appium
-    testCompile group: 'io.appium', name: 'java-client', version: '6.0.0'
+    testCompile 'io.appium:java-client:6.0.0'
 
     // Selenium
     testCompile 'org.seleniumhq.selenium:selenium-java:3.14.0'
@@ -29,10 +32,7 @@ dependencies {
     //Dependency Injection
     testCompile 'info.cukes:cucumber-picocontainer:1.2.5'
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile 'org.testng:testng:6.9.9'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile 'net.masterthought:cucumber-reporting:3.7.0'
+    //Assertion library
     testCompile 'org.hamcrest:hamcrest-all:1.3'
 }
 

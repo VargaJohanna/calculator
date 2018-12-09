@@ -5,7 +5,7 @@ Feature: Execute basic operations
     And I press button "+"
     And I enter input "12000"
     When I press button "="
-    Then the output is "667001"
+    Then the output is "667001.0"
 
   Scenario: Subtract numbers where the result is positive
     Given I enter input "999999.98"

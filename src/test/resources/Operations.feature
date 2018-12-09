@@ -42,6 +42,7 @@ Feature: Execute basic operations
     When I press button "="
     Then the output is "Infinity"
 
+  @regression
   Scenario: Entering letters should not be allowed
     Given I enter input "string"
     Then the field should be empty

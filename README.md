@@ -1,7 +1,7 @@
 # calculator
 Appium tests for an android calculator
 
-How to run the tests:
+## How to run the tests:
 1. Checkout the repository
 
 2. Ensure that the followings are installed on your machine:
@@ -25,3 +25,9 @@ How to run the tests:
 8. Alternatively the project can be opened by IntelliJ and run the tests by the “RunCucumberTest.java” file.
    Or trigger tests by right clicking on the scenarios in the “Operations.feature” file and selecting the run scenario option
 
+## About the code
+The suite lives within the src/test package. 
+The src/test/java/utils package contains all the configurations.
+The DriverMethods class (src/test/java/sharedMethods/) will be injected to any class that needs to call the driver.
+The steps are in: src/test/java/stepDefinitions/ 
+The tests are in: src/test/resources/

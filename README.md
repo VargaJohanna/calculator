@@ -14,13 +14,14 @@ How to run the tests:
 
 5. If the Android version of the device is not 8, then please edit the “utils/TestConfiguration.java” file and change the “platformVersion” field in line 6.
 
-6. Open Terminal,
-   Navigating to the directory path where build.gradle file is located in the repo (e.g. C:\Users\<name>\IdeaProjects\calculator>,
-   Enter the following commands:
-      On Windows enter “gradle runTests”
-      On Mac enter: “./gradlew runTests”
+6. Open Terminal and navigate to the directory path where build.gradle file is located in the repo
+(e.g. C:\Users\<name>\IdeaProjects\calculator>,
+
+7. Enter the following commands:
+      On Windows enter “gradle runTests”.
+      On Mac enter: “./gradlew runTests”.
    And the tests should start running
    
-7. Alternatively the project can be opened by IntelliJ and run the tests by the “RunCucumberTest.java” file.
+8. Alternatively the project can be opened by IntelliJ and run the tests by the “RunCucumberTest.java” file.
    Or trigger tests by right clicking on the scenarios in the “Operations.feature” file and selecting the run scenario option
 

@@ -26,8 +26,8 @@ Appium tests for an android calculator
    Or trigger tests by right clicking on the scenarios in the “Operations.feature” file and selecting the run scenario option
 
 ## About the code
-The suite lives within the src/test package. 
-The src/test/java/utils package contains all the configurations.
-The DriverMethods class (src/test/java/sharedMethods/) will be injected to any class that needs to call the driver.
-The steps are in: src/test/java/stepDefinitions/ 
-The tests are in: src/test/resources/
+The suite lives within the src/test package.  
+The src/test/java/utils package contains all the configurations.  
+The DriverMethods class (src/test/java/sharedMethods/) will be injected to any class that needs to call the driver.  
+The steps are in: src/test/java/stepDefinitions/  
+The tests are in: src/test/resources/  

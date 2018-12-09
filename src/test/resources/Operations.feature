@@ -1,7 +1,7 @@
 Feature: Execute basic operations
 
   Scenario: Sum two numbers
-    Given I enter input "655001655001"
+    Given I enter input "655001"
     And I press button "+"
     And I enter input "12000"
     When I press button "="
@@ -12,14 +12,14 @@ Feature: Execute basic operations
     And I press button "-"
     And I enter input "999.01"
     When I press button "="
-    Then the output is "999000.97"
+    Then the output is "999001.0"
 
   Scenario: Subtract numbers where the result is negative
     Given I enter input "70"
     And I press button "-"
     And I enter input "782000"
     When I press button "="
-    Then the output is "-781930"
+    Then the output is "-781930.0"
 
   Scenario: Divide two numbers
     Given I enter input "10000"

@@ -21,14 +21,14 @@ public class BeforeAfterScenario {
     public void setupDriver() {
         DriverFactory driverFactory = new AndroidDriverFactory();
         DriverConfiguration configuration = new DriverConfiguration();
-        File apk = new File("src/test/java/apk/assignment1.apk");
+        File apk = new File(TestConfiguration.apkFilePath);
         configuration.setDesiredCapabilities(
                 apk,
                 TestConfiguration.platformName,
                 TestConfiguration.deviceName,
                 TestConfiguration.platformVersion,
                 TestConfiguration.automationName);
-        configuration.setAppiumAddress("http://127.0.0.1:4723/wd/hub");
+        configuration.setAppiumAddress(TestConfiguration.appiumAddress);
         driverMethods.setDriver(driverFactory.createDriver(configuration));
     }
 
